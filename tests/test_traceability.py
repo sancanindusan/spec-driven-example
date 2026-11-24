@@ -1,4 +1,4 @@
-"""Constitution 4: every requirement has a test."""
+"""Every requirement in the spec has a test."""
 import re
 from pathlib import Path
 
@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_every_requirement_is_referenced_by_a_test():
-    spec = (ROOT / "specs/001-seat-change-proration/requirements.md").read_text()
+    spec = (ROOT / "specs/001-seat-change-proration/spec.md").read_text()
     required = set(re.findall(r"REQ-\d{3}", spec))
     tests = " ".join(p.read_text() for p in (ROOT / "tests").glob("test_*.py")
                      if p.name != "test_traceability.py")

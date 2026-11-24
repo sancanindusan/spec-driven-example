@@ -1,4 +1,4 @@
-"""Domain model. See specs/001-seat-change-proration/design.md."""
+"""Domain model. See specs/001-seat-change-proration/spec.md."""
 from __future__ import annotations
 
 from dataclasses import dataclass

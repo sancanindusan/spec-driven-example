@@ -106,7 +106,7 @@ def test_req_009_effective_date_outside_cycle_is_rejected(effective):
 
 
 def test_req_007_status_is_checked_before_other_rules():
-    """Validation order from design.md: status wins over NO_CHANGE."""
+    """Validation order from the spec: status wins over NO_CHANGE."""
     result = evaluate_seat_change(make_sub(status=Status.SUSPENDED), make_req(10))
     assert result.reason is RejectReason.SUBSCRIPTION_NOT_ACTIVE
 

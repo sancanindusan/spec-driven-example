@@ -21,7 +21,7 @@ def _reject(sub: Subscription, reason: RejectReason) -> SeatChangeResult:
 
 
 def _validate(sub: Subscription, req: SeatChangeRequest) -> RejectReason | None:
-    """Checks in the order fixed by design.md; first failure wins."""
+    """Checks in the order fixed by the spec; first failure wins."""
     plan = sub.plan
     if sub.status is not Status.ACTIVE:                                  # REQ-007
         return RejectReason.SUBSCRIPTION_NOT_ACTIVE
